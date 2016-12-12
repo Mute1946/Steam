@@ -1,7 +1,7 @@
 (function () {
 
   angular
-    .module('loc8rApp')
+    .module('steamApp')
     .directive('footerGeneric', footerGeneric);
 
   function footerGeneric () {
