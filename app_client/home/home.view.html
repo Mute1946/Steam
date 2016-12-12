@@ -1,33 +1,24 @@
-<navigation></navigation>
+<div id="wrapper" ng-class="vm.toggle ? 'toggled' : ''">
 
-<div class="container">
-  <page-header content="vm.pageHeader"></page-header>
+    <sidebar></sidebar>
 
-  <div class="row">
-    <div class="col-xs-12 col-sm-8">
-      <label for="filter">Filter results</label>
-      <input id="filter" type="text", name="filter", ng-model="textFilter">
-      <div class="error">{{ vm.message }}</div>
-      <div class="row list-group">
-        <div class="col-xs-12 list-group-item" ng-repeat="location in vm.data.locations | filter : textFilter">
-          <h4>
-            <a href="#/location/{{ location._id }}">{{ location.name }}</a>
-            <small class="rating-stars" rating-stars rating="location.rating"></small>
-            <span class="badge pull-right badge-default">{{ location.distance | formatDistance }}</span>
-          </h4>
-          <p class="address">{{ location.address }}</p>
-          <p>
-            <span class="label label-warning label-facility" ng-repeat="facility in location.facilities">
-              {{ facility }}
-            </span>
-          </p>
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>{{vm.content}}</h1>
+                    <p>This application uses data from web services and real-time Steam data for users playing the game Team Fortress 2.</p>
+
+                    <button type="button" class="btn btn-default btn-link" id="menu-toggle" ng-model="vm.toggle" ng-click="vm.toggle=!vm.toggle">Toggle Menu</button>
+                </div>
+            </div>
+            <br>
+            <footer-generic></footer-generic>
         </div>
-      </div>
+        
     </div>
-    <div class="col-xs-12 col-sm-4">
-      <p class="lead">{{ vm.sidebar.content }}</p>
-    </div>
-  </div>
-
-  <footer-generic></footer-generic>
+    <!-- /#page-content-wrapper -->
 </div>
+<!-- /#wrapper -->
+
