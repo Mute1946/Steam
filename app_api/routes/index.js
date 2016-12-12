@@ -1,18 +1,21 @@
 var express = require('express');
 var router = express.Router();
-var ctrlLocations = require('../controllers/locations');
-var ctrlReviews = require('../controllers/reviews');
+var ctrlGameData = require('../controllers/game');
+var ctrlPlayerData = require('../controllers/player');
+var ctrlSteamData = require('../controllers/steamid');
 
-router.get('/locations', ctrlLocations.locationsListByDistance);
-router.post('/locations', ctrlLocations.locationsCreate);
-router.get('/locations/:locationid', ctrlLocations.locationsReadOne);
-router.put('/locations/:locationid', ctrlLocations.locationsUpdateOne);
-router.delete('/locations/:locationid', ctrlLocations.locationsDeleteOne);
+/* Steam ID Data */
+router.get('/steamidData', ctrlSteamData.steamidReadOne);
 
-// reviews
-router.post('/locations/:locationid/reviews', ctrlReviews.reviewsCreate);
-router.get('/locations/:locationid/reviews/:reviewid', ctrlReviews.reviewsReadOne);
-router.put('/locations/:locationid/reviews/:reviewid', ctrlReviews.reviewsUpdateOne);
-router.delete('/locations/:locationid/reviews/:reviewid', ctrlReviews.reviewsDeleteOne);
+/* Achievments Data */
+router.get('/achievmentData/:achievement', ctrlPlayerData.achievementDataReadOne);
+router.get('/achievementData', ctrlPlayerData.achievementDataReadAll);
+
+/* Stats Data */
+router.get('/statsData/:stats', ctrlPlayerData.statsDataReadOne);
+router.get('/statsData', ctrlPlayerData.statsDataReadAll);
+
+/* Summary Data */
+router.get('/summaryData', ctrlPlayerData.summaryDataReadAll);
 
 module.exports = router;

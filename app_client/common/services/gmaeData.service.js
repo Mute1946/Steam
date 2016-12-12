@@ -1,11 +1,11 @@
 (function() {
 
   angular
-    .module('loc8rApp')
-    .service('loc8rData', loc8rData);
+    .module('steamApp')
+    .service('gameData', gameData);
 
-  loc8rData.$inject = ['$http'];
-  function loc8rData ($http) {
+  gameData.$inject = ['$http'];
+  function gameData ($http) {
     var locationByCoords = function (lat, lng) {
       return $http.get('/api/locations?lng=' + lng + '&lat=' + lat + '&maxDistance=20');
     };
