@@ -1,0 +1,56 @@
+<div id="wrapper" ng-class="vm.toggle ? 'toggled' : ''">
+
+    <sidebar></sidebar>
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>{{vm.content}}</h1>
+                        <form novalidate>
+                            <div class="form-group">
+                                <label for="selectSteamId">Steam ID</label>
+                                <select id="selectSteamId" 
+                                        class="form-control" 
+                                        ng-model="vm.selectedSteamId" 
+                                        ng-options="apt.steamId for apt in vm.steamid"></select>
+                                <p class="bg-info" ng-bind="vm.selectedSteamId.steamId"></p>
+                            </div>
+                            <div class="form-group">
+                                <label for="selectAchievement">Game Achievement</label>
+                                <select id="selectAchievement" 
+                                        class="form-control" 
+                                        ng-model="vm.selectedAchievement" 
+                                        ng-options="achievement.achieved for achievement in vm.achievementData"></select>
+                                <p class="bg-info" ng-bind="vm.selectedAchievement.achieved"></p>
+                            </div>
+                            <div class="form-group">
+                                <label for="selectStat">Game Stat</label>
+                                <select id="selectStat" 
+                                        class="form-control" 
+                                        ng-model="vm.selectedStat" 
+                                        ng-options="stat.value for stat in vm.statData"></select>
+                                <p class="bg-info" ng-bind="vm.selectedStat.value"></p>
+                            </div>                             
+                        </form>
+                    
+                    <!--<a href="#menu-toggle" class="btn btn-default" id="menu-toggle" ng-click="toggleMenu">Toggle Menu</a>-->
+                    <button type="button" 
+                            class="btn btn-default btn-link" 
+                            id="menu-toggle" 
+                            ng-model="vm.toggle" 
+                            ng-click="vm.toggle=!vm.toggle">Toggle Menu</button>
+                    <button type="button" 
+                            class="btn btn-default" 
+                            id="clear-selected-data" 
+                            ng-click="vm.clearSelectedData()">Clear Selected</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+

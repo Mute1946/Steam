@@ -1,12 +1,12 @@
 (function() {
 
     angular
-        .module('airplaneApp')
-        .controller('landingCtrl', landingCtrl);
+        .module('steamApp')
+        .controller('statCtrl', statCtrl);
 
-    landingCtrl.$inject = ['$scope', 'SelectedData', 'AirplaneData'];
+    statCtrl.$inject = ['$scope', 'SelectedData', 'GameData'];
 
-    function landingCtrl($scope, SelectedData, AirplaneData) {
+    function statCtrl($scope, SelectedData, GameData) {
         // Nasty IE9 redirect hack (not recommended)
         /*
         if (window.location.pathname !== '/') {
@@ -15,34 +15,34 @@
         var vm = this;
         console.log(window.location);
 
-        vm.content = "Landing Data";
+        vm.content = "Game Stats";
 
-        vm.selectedDepartureICAO = "";
-        vm.selectedArrivalICAO = "";
-        vm.selectedWeight = "";
+        vm.selectedSteamID = "";
+        vm.selectedAchievement = "";
+        vm.selectedStat = "";
 
-        //check selected Departure
-        if (SelectedData.selectedDepartureICAO !== null) {
-            vm.selectedDepartureICAO = SelectedData.selectedDepartureICAO;
+        //check selected Steam ID
+        if (SelectedData.selectedSteamID !== null) {
+            vm.selectedSteamID = SelectedData.selectedSteamID;
         }
 
-        //check selected Arrival
-        if (SelectedData.selectedArrivalICAO !== null) {
-            vm.selectedArrivalICAO = SelectedData.selectedArrivalICAO;
+        //check selected Achievement
+        if (SelectedData.selectedAchievement !== null) {
+            vm.selectedAchievement = SelectedData.selectedAchievement;
         }
 
-        //check selected weight
-        if (SelectedData.selectedWeight !== null) {
-            vm.selectedWeight = SelectedData.selectedWeight;
+        //check selected Stat
+        if (SelectedData.selectedStat !== null) {
+            vm.selectedStat = SelectedData.selectedStat;
         }
 
-        vm.getLandingDataForWeight = function() {
+        vm.getStatsDataForValue = function() {
             
-            AirplaneData.getClimbDataForWeight(vm.selectedWeight.weight)
+            GameData.getStatsDataForValue(vm.selectedStat.value)
                 .success(function(data) {
                     //since find may select many, just return the single object
-                    vm.takeoffData = data;
-                    console.log(vm.takeoffData);
+                    vm.statsData = data;
+                    console.log(vm.statsData);
                 })
                 .error(function(e) {
                     console.log(e);

@@ -18,7 +18,7 @@ var PlayersStatsSchema = new mongoose.Schema({
 	steamid: Number,
 	gamename: String,
 	stats: [StatsSchema],
-	achieved: [AchivementSchema]
+	achievements: [AchivementSchema]
 });
 
 mongoose.model('GameData', PlayersStatsSchema, 'GameData');
