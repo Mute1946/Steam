@@ -1,14 +1,18 @@
 var mongoose = require('mongoose');
 
 var StatsSchema = new mongoose.Schema({
-	statname: String,
-	statcount: Number
+	name: String,
+	value: Number
 });
 
+mongoose.model('StatsData', StatsSchema, 'StatsData');
+
 var AchivementSchema = new mongoose.Schema({
-	achievementname: String,
+	name: String,
 	achieved: Number
 });
+
+mongoose.model('AchievementData', AchivementSchema, 'AchievementData');
 
 var PlayersStatsSchema = new mongoose.Schema({
 	steamid: Number,

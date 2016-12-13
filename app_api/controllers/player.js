@@ -26,13 +26,13 @@ module.exports.achievementsDataReadAll = function(req, res) {
         });
 }
 
-/* GET AchievementData by Achievement */
+/* GET AchievementData by Achieved */
 module.exports.achievementDataReadOne = function(req, res) {
     console.log('Finding Achievement Data Record', req.params);
     if (req.params && req.params.weight) {
         AchievementData
             .find({
-                achievement: req.params.achievement
+                achieved: req.params.achieved
             })
             .exec(function(err, achievementData) {
                 if (!achievementData) {
@@ -58,13 +58,29 @@ module.exports.achievementDataReadOne = function(req, res) {
     }
 };
 
-/* GET StatsData by stat */
+/* GET all StatsData records */
+module.exports.statsDataReadAllDataReadAll = function(req, res) {
+    console.log("Finding all Achievement Data Records", req);
+
+    StatsData
+        .find({})
+        .exec(function(err, statsData) {
+            if (err) {
+                console.log(err);
+                sendJSONresponse(res, 404, err);
+            }
+            console.log(statsData);
+            sendJSONresponse(res, 200, statsData);
+        });
+}
+
+/* GET StatsData by value */
 module.exports.statsDataReadOne = function(req, res) {
     console.log('Finding Stats Data Record', req.params);
     if (req.params && req.params.weight) {
         StatsData
             .find({
-                stat: req.params.stat,
+                value: req.params.value
             })
             .exec(function(err, statsData) {
                 if (!statsData) {
@@ -89,3 +105,19 @@ module.exports.statsDataReadOne = function(req, res) {
         });
     }
 };
+
+/* GET all PlayerData records */
+module.exports.playerDataReadAll = function(req, res) {
+    console.log("Finding all Summary Data Records", req);
+
+    PlayerData
+        .find({})
+        .exec(function(err, playerData) {
+            if (err) {
+                console.log(err);
+                sendJSONresponse(res, 404, err);
+            }
+            console.log(playerData);
+            sendJSONresponse(res, 200, playerData);
+        });
+}

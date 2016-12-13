@@ -5,14 +5,14 @@ var ctrlPlayerData = require('../controllers/player');
 var ctrlSteamData = require('../controllers/steamid');
 
 /* Steam ID Data */
-router.get('/steamidData', ctrlSteamData.steamidReadOne);
+router.get('/steamData', ctrlSteamData.steamidReadOne);
 
 /* Achievments Data */
-router.get('/achievmentData/:achievement', ctrlPlayerData.achievementDataReadOne);
+router.get('/achievmentData/:achieved', ctrlPlayerData.achievementDataReadOne);
 router.get('/achievementData', ctrlPlayerData.achievementDataReadAll);
 
 /* Stats Data */
-router.get('/statsData/:stats', ctrlPlayerData.statsDataReadOne);
+router.get('/statsData/:value', ctrlPlayerData.statsDataReadOne);
 router.get('/statsData', ctrlPlayerData.statsDataReadAll);
 
 /* Summary Data */

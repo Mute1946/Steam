@@ -4,4 +4,4 @@ var SteamidSchema = new mongoose.Schema({
 	steamid: Number
 });
 
-mongoose.model('SteamidData', SteamidSchema, 'SteamidData');
+mongoose.model('SteamData', SteamidSchema, 'SteamData');

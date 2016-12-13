@@ -8,8 +8,8 @@ var sendJSONresponse = function(res, status, content)
     res.json(content);
 }
 
-/* GET all AirportData records */
-module.exports.SteamDataDataReadOne = function(req, res)
+/* GET all SteamIDData records */
+module.exports.SteamDataReadOne = function(req, res)
 {
   console.log("Finding SteamID Data Record", req);
   
