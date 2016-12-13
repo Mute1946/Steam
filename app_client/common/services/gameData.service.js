@@ -2,27 +2,27 @@
 
   angular
     .module('steamApp')
-    .service('gameData', gameData);
+    .service('gameData', steamData()Data);
 
-  gameData.$inject = ['$http'];
-  function gameData ($http) {
-    var locationByCoords = function (lat, lng) {
-      return $http.get('/api/locations?lng=' + lng + '&lat=' + lat + '&maxDistance=20');
+  steamData()Data.$inject = ['$http'];
+  function steamData ($http) {
+    var getSteamId = function () {
+      return $http.get('/api/steamData');
     };
 
-    var locationById = function (locationid) {
-      return $http.get('/api/locations/' + locationid);
+    var getAchievementforAchieved = function (achieved) {
+      return $http.get('/api/achievementData' + achieved);
     };
 
-    var addReviewById = function (locationid, data) {
-      return $http.post('/api/locations/' + locationid + '/reviews', data);
+    var getStatsDataForValue = function (value) {
+      return $http.post('/api/statData' + value);
     };
 
     return {
-      locationByCoords : locationByCoords,
-      locationById : locationById,
-      addReviewById : addReviewById
-    };
+      getSteamId: getSteamData,
+      getAchievementforAchieved : getAchievementforAchieved,
+      getStatsDataForValue : getStatsDataForValue
+      };
   }
 
 })();
