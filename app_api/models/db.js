@@ -46,6 +46,6 @@ process.on('SIGTERM', function() {
 });
 
 // BRING IN YOUR SCHEMAS & MODELS
-require('./steamidData');
-require('./playerdata');
-require('./gamedata');
+require('./steamData');
+require('./playerData');
+require('./gameData');
