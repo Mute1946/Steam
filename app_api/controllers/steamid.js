@@ -6,7 +6,7 @@ var sendJSONresponse = function(res, status, content)
 {
     res.status(status);
     res.json(content);
-}
+};
 
 /* GET all SteamIDData records */
 module.exports.SteamDataReadOne = function(req, res)
@@ -23,4 +23,4 @@ module.exports.SteamDataReadOne = function(req, res)
       console.log(steamData);
       sendJSONresponse(res, 200, steamData);
     });
-}
+};

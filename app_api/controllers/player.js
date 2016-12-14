@@ -8,7 +8,7 @@ var PlayerData = mongoose.model('PlayerData');
 var sendJSONresponse = function(res, status, content) {
     res.status(status);
     res.json(content);
-}
+};
 
 /* GET all AchievementData records */
 module.exports.achievementsDataReadAll = function(req, res) {
@@ -24,12 +24,12 @@ module.exports.achievementsDataReadAll = function(req, res) {
             console.log(achievementData);
             sendJSONresponse(res, 200, achievementData);
         });
-}
+};
 
 /* GET AchievementData by Achieved */
 module.exports.achievementDataReadOne = function(req, res) {
     console.log('Finding Achievement Data Record', req.params);
-    if (req.params && req.params.weight) {
+    if (req.params && req.params.achieved) {
         AchievementData
             .find({
                 achieved: req.params.achieved
@@ -60,7 +60,7 @@ module.exports.achievementDataReadOne = function(req, res) {
 
 /* GET all StatsData records */
 module.exports.statsDataReadAllDataReadAll = function(req, res) {
-    console.log("Finding all Achievement Data Records", req);
+    console.log("Finding all Stats Data Records", req);
 
     StatsData
         .find({})
@@ -72,12 +72,12 @@ module.exports.statsDataReadAllDataReadAll = function(req, res) {
             console.log(statsData);
             sendJSONresponse(res, 200, statsData);
         });
-}
+};
 
 /* GET StatsData by value */
 module.exports.statsDataReadOne = function(req, res) {
     console.log('Finding Stats Data Record', req.params);
-    if (req.params && req.params.weight) {
+    if (req.params && req.params.value) {
         StatsData
             .find({
                 value: req.params.value
@@ -120,4 +120,4 @@ module.exports.playerDataReadAll = function(req, res) {
             console.log(playerData);
             sendJSONresponse(res, 200, playerData);
         });
-}
+};
