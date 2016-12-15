@@ -19,7 +19,7 @@
       })
       .when('/achievements/', {
         templateUrl: '/achievements/achievements.view.html',
-        controller: 'achievementsCtrl',
+        controller: 'achievementCtrl',
         controllerAs: 'vm'
       })
       .when('/stats/', {
@@ -27,14 +27,9 @@
         controller: 'statsCtrl',
         controllerAs: 'vm'
       })
-      .when('/steamid/', {
-        templateUrl: '/steamid/steamid.view.html',
-        controller: 'steamidCtrl',
-        controllerAs: 'vm'
-      })
-      .when('/gamestats/', {
-        templateUrl: '/gamestats/gamestats.view.html',
-        controller: 'gamestatsCtrl',
+      .when('/gamedata/', {
+        templateUrl: '/gamedata/gamedata.view.html',
+        controller: 'gameCtrl',
         controllerAs: 'vm'
       })      
       .otherwise({redirectTo: '/'});

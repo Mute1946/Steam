@@ -6,12 +6,12 @@
 
   playerData.$inject = ['$http'];
   function playerData ($http) {
-      var getPlayerSummaries = function(){
+      var getPlayerSummary = function(){
           return $http.get('/api/playerData');
       };
 
       return {
-          getPlayerSummaries : getPlayerSummaries(),
+          getPlayerSummary : getPlayerSummary,
       };
   }
 

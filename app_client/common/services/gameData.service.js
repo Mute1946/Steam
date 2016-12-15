@@ -2,11 +2,12 @@
 
   angular
     .module('steamApp')
-    .service('steamData', steamData());
+    .service('steamData', gameData());
 
-  steamData().$inject = ['$http'];
-  function steamData ($http) {
-    var getSteamData = function () {
+  gameData().$inject = ['$http'];
+  
+  function gameData ($http) {
+    var getSteamID = function () {
       return $http.get('/api/steamData');
     };
 
@@ -19,7 +20,7 @@
     };
 
     return {
-      getSteamId: getSteamData,
+      getSteamID: getSteamID,
       getAchievementforAchieved : getAchievementforAchieved,
       getStatsDataForValue : getStatsDataForValue
       };
