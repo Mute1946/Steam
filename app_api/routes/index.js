@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var ctrlPlayerData = require('../controllers/player');
 var ctrlSteamData = require('../controllers/steamid');
+var ctrlGameData = require('../contollers/')
 
 /* Steam ID Data */
 router.get('/steamData', ctrlSteamData.steamDataReadOne);
