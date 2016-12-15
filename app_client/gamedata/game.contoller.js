@@ -45,7 +45,7 @@
         .error(function(e) {
           console.log(e);
         });
-    }
+    };
 
     vm.getAchivementData = function() {
       GameData.getGameData()
@@ -56,7 +56,7 @@
         .error(function(e) {
           console.log(e);
         });
-    }
+    };
     
     vm.getStatsData = function() {
       GameData.getGameData()
@@ -67,7 +67,7 @@
         .error(function(e) {
           console.log(e);
         });
-    }
+    };
 
     vm.toggleMenu = function() {
       if (vm.class === "toggled") {
@@ -84,7 +84,7 @@
       vm.selectedSteamID = null;
       vm.selectedAchievement = null;
       vm.selectedStat = null;
-    }
+    };
     
     //saved steamid
     $scope.$watch(
@@ -94,7 +94,7 @@
       function (newValue, oldValue) {
         console.log(oldValue);
         console.log(newValue);
-        if (newValue.icao !== oldValue.icao){
+        if (newValue.steamid !== oldValue.steamid){
           SelectedData.selectedSteamID = newValue;
         } 
       }, 
@@ -109,7 +109,7 @@
       function (newValue, oldValue) {
         console.log(oldValue);
         console.log(newValue);
-        if (newValue.icao !== oldValue.icao){
+        if (newValue.name !== oldValue.name){
           SelectedData.selectedAchievement = newValue;
         } 
       }, 
@@ -124,7 +124,7 @@
       function (newValue, oldValue) {
         console.log(oldValue);
         console.log(newValue);
-        if (newValue.weight !== oldValue.weight){
+        if (newValue.name !== oldValue.name){
           SelectedData.selectedStat = newValue;
         } 
       }, 

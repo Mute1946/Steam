@@ -9,7 +9,7 @@
 
         var getKeys = function(){
             return $http.get('/keys.json');
-        }
+        };
 
         return {
             getKeys: getKeys

@@ -7,7 +7,7 @@
     steamcommunity.$inject = ['$http', 'KeyStore'];
 
     function steamcommunity($http, KeyStore) {
-        var getSteam = function(lat, lon) {
+        var getSteam = function(data) {
 
             KeyStore.getKeys()
                 .success(function(data) {
@@ -24,17 +24,9 @@
                     console.log(e);
                 });
         };
-        
-        var getWeather2 =  function(lat, lon){
-            return $http.jsonp('https://api.darksky.net/forecast/f53f715588d39379ae80bc9bc045c885/' +
-                lat + ',' + lon + "?callback=JSON_CALLBACK", {
-                    jsonpCallbackParam: 'callback'
-                });        
-        }        
 
         return {
-            getWeather: getWeather,
-            getWeather2 : getWeather2
+            getSteam: getSteam,
         };
     }
     
