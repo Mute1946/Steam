@@ -2,27 +2,27 @@
 
   angular
     .module('steamApp')
-    .service('steamData', gameData());
+    .service('steamidData', gameData());
 
   gameData().$inject = ['$http'];
   
   function gameData ($http) {
     var getSteamidData = function () {
-      return $http.get('/api/steamData');
+      return $http.get('/api/steamidData');
     };
 
-    var getAchievementforAchieved = function (achieved) {
-      return $http.get('/api/achievementData' + achieved);
+    var getAchievementData = function () {
+      return $http.get('/api/achievements');
     };
 
-    var getStatsDataForValue = function (value) {
-      return $http.post('/api/statsData' + value);
+    var getStatsData = function () {
+      return $http.post('/api/stats');
     };
 
     return {
       getSteamidData: getSteamidData,
-      getAchievementforAchieved : getAchievementforAchieved,
-      getStatsDataForValue : getStatsDataForValue
+      getAchievementData : getAchievementData,
+      getStatsData : getStatsData
       };
   }
 
