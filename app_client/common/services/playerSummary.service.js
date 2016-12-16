@@ -39,6 +39,7 @@
         };
     }
     
-//does not connect to the web api.  Does not show up on heroku
+/*does not connect to the web api.  Does not show up on heroku
+Heroku can't pull data from my mLab data*/
 
 })();
