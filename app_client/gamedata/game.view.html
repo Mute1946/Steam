@@ -13,25 +13,25 @@
                                 <label for="selectSteamId">Steam ID</label>
                                 <select id="selectSteamId" 
                                         class="form-control" 
-                                        ng-model="vm.selectedSteamId" 
-                                        ng-options="apt.steamId for apt in vm.steamid"></select>
-                                <p class="bg-info" ng-bind="vm.selectedSteamId.steamid"></p>
+                                        ng-model="vm.selectedSteamID" 
+                                        ng-options="apt.steamId for apt in vm.steamids"></select>
+                                <p class="bg-info" ng-bind="vm.selectedSteamID.steamid"></p>
                             </div>
                             <div class="form-group">
                                 <label for="selectAchievement">Game Achievement</label>
                                 <select id="selectAchievement" 
                                         class="form-control" 
                                         ng-model="vm.selectedAchievement" 
-                                        ng-options="achievement.steamid for achievement in vm.achievementData"></select>
-                                <p class="bg-info" ng-bind="vm.selectedAchievement.steamid"></p>
+                                        ng-options="apt.achievementName for achievement in vm.achievements"></select>
+                                <p class="bg-info" ng-bind="vm.selectedAchievement.achievementName"></p>
                             </div>
                             <div class="form-group">
                                 <label for="selectStat">Game Stat</label>
                                 <select id="selectStat" 
                                         class="form-control" 
                                         ng-model="vm.selectedStat" 
-                                        ng-options="stat.steamid for stat in vm.statsData"></select>
-                                <p class="bg-info" ng-bind="vm.selectedStat.steamid"></p>
+                                        ng-options="apt.statsName for stat in vm.stats"></select>
+                                <p class="bg-info" ng-bind="vm.selectedStat.statsName"></p>
                             </div>                             
                         </form>
                     
