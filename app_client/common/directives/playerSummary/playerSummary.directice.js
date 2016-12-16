@@ -8,7 +8,7 @@
     return {
       restrict: 'EA',
       scope: {
-        weather : '=info',
+        summary : '=info',
       },      
       templateUrl: '/common/directives/playerSummary/playerSummary.template.html'
     };

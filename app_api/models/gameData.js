@@ -1,17 +1,30 @@
 var mongoose = require('mongoose');
 
 var StatsSchema = new mongoose.Schema({
-	stat: String,
 	steamid: String,
-	value: Number
+	scoutaccumibuildingsdestroyed: Number,
+	scoutaccumidamagedealt: Number,
+	scoutaccumiplaytime: Number,
+	soldieraccumibuildingsdestroyed: Number,
+	soldieraccumidamagedealt: Number,
+	soldieraccumiplaytime: Number,
+	medicaccumibuildingsdetroyed: Number,
+	medicaccumidamagedealt: Number,
+	medicaccumiplaytime: Number
 });
 
 mongoose.model('StatsData', StatsSchema, 'StatsData');
 
 var AchivementSchema = new mongoose.Schema({
-	achievement: String,
 	steamid: String,
-	achieved: Number
+	playgameeverymap: Number,
+	getconsecutivekillsnodeaths: Number,
+	medicrapidcharge: Number,
+	medicassistheavylong: Number,
+	pyrokillmultiweapons: Number,
+	pyrokillspies: Number,
+	pyroburnmedicscharged: Number,
+	heavydefendmedic: Number
 });
 
 mongoose.model('AchievementData', AchivementSchema, 'AchievementData');
