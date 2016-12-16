@@ -22,7 +22,7 @@
                                 <select id="selectAchievement" 
                                         class="form-control" 
                                         ng-model="vm.selectedAchievement" 
-                                        ng-options="apt.achievementName for achievement in vm.achievements"></select>
+                                        ng-options="apt.achievementName for apt in vm.achievements"></select>
                                 <p class="bg-info" ng-bind="vm.selectedAchievement.achievementName"></p>
                             </div>
                             <div class="form-group">
@@ -30,7 +30,7 @@
                                 <select id="selectStat" 
                                         class="form-control" 
                                         ng-model="vm.selectedStat" 
-                                        ng-options="apt.statsName for stat in vm.stats"></select>
+                                        ng-options="apt.statsName for apt in vm.stats"></select>
                                 <p class="bg-info" ng-bind="vm.selectedStat.statsName"></p>
                             </div>                             
                         </form>
