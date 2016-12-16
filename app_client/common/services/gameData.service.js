@@ -11,12 +11,12 @@
       return $http.get('/api/steamidData');
     };
 
-    var getAchievementDataForSteamId = function (steamid) {
-      return $http.get('/api/achievements/' + steamid);
+    var getAchievementDataForSteamId = function (id) {
+      return $http.get('/api/achievements/' + id);
     };
 
-    var getStatsDataForSteamId = function (steamid) {
-      return $http.post('/api/stats/' + steamid);
+    var getStatsDataForSteamId = function (id) {
+      return $http.post('/api/stats/' + id);
     };
 
     return {
