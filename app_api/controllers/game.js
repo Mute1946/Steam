@@ -24,18 +24,18 @@ module.exports.achievementsDataReadAll = function(req, res) {
         });
 };
 
-/* GET AchievementData by Achieved */
+/* GET AchievementData by Steam ID */
 module.exports.achievementsDataReadOne = function(req, res) {
-    console.log('Finding Achievement Data Record', req.params);
-    if (req.params && req.params.achieved) {
+    console.log('Finding Steam ID Record', req.params);
+    if (req.params && req.params.steamid) {
         AchievementData
             .find({
-                achieved: req.params.achieved
+                steamid: req.params.steamid
             })
             .exec(function(err, achievementData) {
                 if (!achievementData) {
                     sendJSONresponse(res, 404, {
-                        "message": "Achievement was not found"
+                        "message": "Steam ID was not found"
                     });
                     return;
                 }
@@ -49,9 +49,9 @@ module.exports.achievementsDataReadOne = function(req, res) {
             });
     }
     else {
-        console.log('No achievement was specified');
+        console.log('No steam id was specified');
         sendJSONresponse(res, 404, {
-            "message": "No achievement was in request"
+            "message": "No steam id was in request"
         });
     }
 };
@@ -72,18 +72,19 @@ module.exports.statsDataReadAll = function(req, res) {
         });
 };
 
-/* GET StatsData by value */
+
+/* GET StatsData by Steam ID */
 module.exports.statsDataReadOne = function(req, res) {
-    console.log('Finding Stats Data Record', req.params);
-    if (req.params && req.params.value) {
+    console.log('Finding Steam ID Record', req.params);
+    if (req.params && req.params.steamid) {
         StatsData
             .find({
-                value: req.params.value,
+                steamid: req.params.steamid
             })
             .exec(function(err, statsData) {
                 if (!statsData) {
                     sendJSONresponse(res, 404, {
-                        "message": "Stat was not found"
+                        "message": "id value not found"
                     });
                     return;
                 }
@@ -97,9 +98,9 @@ module.exports.statsDataReadOne = function(req, res) {
             });
     }
     else {
-        console.log('No stat was specified');
+        console.log('No steam id specified');
         sendJSONresponse(res, 404, {
-            "message": "No stat was in request"
+            "message": "No steam id in request"
         });
     }
 };

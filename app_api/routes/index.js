@@ -8,11 +8,11 @@ var ctrlGameData = require('../controllers/game');
 router.get('/steamidData', ctrlSteamidData.steamidDataReadOne);
 
 /* Achievments Data */
-//router.get('/achievmentData/:achieved', ctrlGameData.achievementsDataReadOne);
+router.get('/achievmentData/:steamid', ctrlGameData.achievementsDataReadOne);
 router.get('/achievementData', ctrlGameData.achievementsDataReadAll);
 
 /* Stats Data */
-//router.get('/statsData/:value', ctrlGameData.statsDataReadOne);
+router.get('/statsData/:steamid', ctrlGameData.statsDataReadOne);
 router.get('/statsData', ctrlGameData.statsDataReadAll);
 
 /* Summary Data */

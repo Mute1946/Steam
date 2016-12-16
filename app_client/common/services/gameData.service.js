@@ -11,18 +11,18 @@
       return $http.get('/api/steamidData');
     };
 
-    var getAchievementData = function () {
-      return $http.get('/api/achievements');
+    var getAchievementDataForSteamId = function (steamid) {
+      return $http.get('/api/achievements/' + steamid);
     };
 
-    var getStatsData = function () {
-      return $http.post('/api/stats');
+    var getStatsDataForSteamId = function (steamid) {
+      return $http.post('/api/stats/' + steamid);
     };
 
     return {
       getSteamidData: getSteamidData,
-      getAchievementData : getAchievementData,
-      getStatsData : getStatsData
+      getAchievementDataForSteamId : getAchievementDataForSteamId,
+      getStatsDataForSteamId : getStatsDataForSteamId
       };
   }
 
