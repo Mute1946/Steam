@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var ctrlPlayerData = require('../controllers/player');
+//var ctrlPlayerData = require('../controllers/player');
 var ctrlSteamData = require('../controllers/steamid');
 var ctrlGameData = require('../contollers/game');
 
@@ -16,6 +16,6 @@ router.get('/statsData/:value', ctrlGameData.statsDataReadOne);
 router.get('/statsData', ctrlGameData.statsDataReadAll);
 
 /* Summary Data */
-router.get('/playerData', ctrlPlayerData.playerDataReadAll);
+//router.get('/playerData', ctrlPlayerData.playerDataReadAll);
 
 module.exports = router;
