@@ -7,7 +7,7 @@
   gameData().$inject = ['$http'];
   
   function gameData ($http) {
-    var getSteamID = function () {
+    var getSteamidData = function () {
       return $http.get('/api/steamData');
     };
 
@@ -16,11 +16,11 @@
     };
 
     var getStatsDataForValue = function (value) {
-      return $http.post('/api/statData' + value);
+      return $http.post('/api/statsData' + value);
     };
 
     return {
-      getSteamID: getSteamID,
+      getSteamidData: getSteamidData,
       getAchievementforAchieved : getAchievementforAchieved,
       getStatsDataForValue : getStatsDataForValue
       };

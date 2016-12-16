@@ -4,9 +4,9 @@
         .module('steamApp')
         .controller('achievementCtrl', achievementCtrl);
 
-    achievementCtrl.$inject = ['$scope', 'SelectedData', 'GameData'];
+    achievementCtrl.$inject = ['$scope', 'GameData', 'SelectedData'];
 
-    function achievementCtrl($scope, SelectedData, GameData) {
+    function achievementCtrl($scope, GameData, SelectedData) {
         // Nasty IE9 redirect hack (not recommended)
         /*
         if (window.location.pathname !== '/') {
@@ -36,9 +36,9 @@
             vm.selectedStat = SelectedData.selectedStat;
         }
 
-        vm.getStatsDataForValue = function() {
+        vm.getAchievementDataForAchieved = function() {
             
-            GameData.getAchievementDataForAchieved(vm.selectedAchievement.value)
+            GameData.getAchievementDataForAchieved(vm.selectedAchievement.achieved)
                 .success(function(data) {
                     
                     vm.achievementData = data;

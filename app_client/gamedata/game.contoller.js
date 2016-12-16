@@ -37,7 +37,7 @@
     }    
 
     vm.getSteamData = function() {
-      SteamData.get()
+      SteamData.getSteamid()
         .success(function(data) {
           vm.steamid = data;
           console.log(vm.steamid);
@@ -48,10 +48,10 @@
     };
 
     vm.getAchivementData = function() {
-      GameData.getGameData()
+      GameData.getAchievementData()
         .success(function(data) {
-          vm.gameData = data;
-          console.log(vm.gameData);
+          vm.achievementData = data;
+          console.log(vm.achievementData);
         })
         .error(function(e) {
           console.log(e);
@@ -59,10 +59,10 @@
     };
     
     vm.getStatsData = function() {
-      GameData.getGameData()
+      GameData.getStatsData()
         .success(function(data) {
-          vm.gameData = data;
-          console.log(vm.gameData);
+          vm.statsData = data;
+          console.log(vm.statsData);
         })
         .error(function(e) {
           console.log(e);
@@ -109,7 +109,7 @@
       function (newValue, oldValue) {
         console.log(oldValue);
         console.log(newValue);
-        if (newValue.name !== oldValue.name){
+        if (newValue.achievement !== oldValue.achievement){
           SelectedData.selectedAchievement = newValue;
         } 
       }, 
@@ -124,7 +124,7 @@
       function (newValue, oldValue) {
         console.log(oldValue);
         console.log(newValue);
-        if (newValue.name !== oldValue.name){
+        if (newValue.stat !== oldValue.stat){
           SelectedData.selectedStat = newValue;
         } 
       }, 

@@ -15,7 +15,7 @@
                                         class="form-control" 
                                         ng-model="vm.selectedSteamId" 
                                         ng-options="apt.steamId for apt in vm.steamid"></select>
-                                <p class="bg-info" ng-bind="vm.selectedSteamId.steamId"></p>
+                                <p class="bg-info" ng-bind="vm.selectedSteamId.steamid"></p>
                             </div>
                             <div class="form-group">
                                 <label for="selectAchievement">Game Achievement</label>
@@ -23,7 +23,7 @@
                                         class="form-control" 
                                         ng-model="vm.selectedAchievement" 
                                         ng-options="achievement.achieved for achievement in vm.achievementData"></select>
-                                <p class="bg-info" ng-bind="vm.selectedAchievement.achieved"></p>
+                                <p class="bg-info" ng-bind="vm.selectedAchievement.achievement"></p>
                             </div>
                             <div class="form-group">
                                 <label for="selectStat">Game Stat</label>
@@ -31,7 +31,7 @@
                                         class="form-control" 
                                         ng-model="vm.selectedStat" 
                                         ng-options="stat.value for stat in vm.statData"></select>
-                                <p class="bg-info" ng-bind="vm.selectedStat.value"></p>
+                                <p class="bg-info" ng-bind="vm.selectedStat.stat"></p>
                             </div>                             
                         </form>
                     

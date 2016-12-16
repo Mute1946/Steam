@@ -15,7 +15,7 @@
     var vm = this;
     console.log(window.location);
     
-    vm.content = "Player Data";
+    vm.content = "Steam Data";
     
     vm.selectedSteamID = "";
     vm.selectedAchievement = "";

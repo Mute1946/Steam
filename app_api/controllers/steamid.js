@@ -9,7 +9,7 @@ var sendJSONresponse = function(res, status, content)
 };
 
 /* GET all SteamIDData records */
-module.exports.SteamDataReadOne = function(req, res)
+module.exports.steamDataReadOne = function(req, res)
 {
   console.log("Finding SteamID Data Record", req);
   

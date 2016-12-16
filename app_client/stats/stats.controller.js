@@ -2,11 +2,11 @@
 
     angular
         .module('steamApp')
-        .controller('statCtrl', statCtrl);
+        .controller('statsCtrl', statsCtrl);
 
-    statCtrl.$inject = ['$scope', 'SelectedData', 'GameData'];
+    statsCtrl.$inject = ['$scope', 'SelectedData', 'GameData'];
 
-    function statCtrl($scope, SelectedData, GameData) {
+    function statsCtrl($scope, SelectedData, GameData) {
         // Nasty IE9 redirect hack (not recommended)
         /*
         if (window.location.pathname !== '/') {

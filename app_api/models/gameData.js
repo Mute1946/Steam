@@ -1,24 +1,26 @@
 var mongoose = require('mongoose');
 
 var StatsSchema = new mongoose.Schema({
-	name: String,
+	stat: String,
+	steamid: Number,
 	value: Number
 });
 
 mongoose.model('StatsData', StatsSchema, 'StatsData');
 
 var AchivementSchema = new mongoose.Schema({
-	name: String,
+	achievement: String,
+	steamid: Number,
 	achieved: Number
 });
 
 mongoose.model('AchievementData', AchivementSchema, 'AchievementData');
 
-var PlayersStatsSchema = new mongoose.Schema({
+var SteamidSchema = new mongoose.Schema({
 	steamid: Number,
 	gamename: String,
 	stats: [StatsSchema],
 	achievements: [AchivementSchema]
 });
 
-mongoose.model('GameData', PlayersStatsSchema, 'GameData');
+mongoose.model('GameData', SteamidSchema, 'GameData');
