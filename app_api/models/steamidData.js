@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var SteamidSchema = new mongoose.Schema({
-	id: Number
+	id: String
 });
 
-mongoose.model('SteamidData', SteamidSchema, 'SteamidData');
+mongoose.model('GameData', SteamidSchema, 'GameData');
