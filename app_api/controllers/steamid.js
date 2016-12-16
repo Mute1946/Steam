@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var SteamData = mongoose.model('SteamData');
+var SteamidData = mongoose.model('SteamidData');
 
 //utility method for the module
 var sendJSONresponse = function(res, status, content)
@@ -9,11 +9,11 @@ var sendJSONresponse = function(res, status, content)
 };
 
 /* GET all SteamIDData records */
-module.exports.steamDataReadOne = function(req, res)
+module.exports.steamidDataReadOne = function(req, res)
 {
   console.log("Finding SteamID Data Record", req);
   
-  SteamData
+  SteamidData
     .find({})
     .exec(function(err, steamData){
       if(err){

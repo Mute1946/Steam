@@ -1,8 +1,6 @@
 var mongoose = require('mongoose');
 var AchievementData = mongoose.model('AchievementData');
 var StatsData = mongoose.model('StatsData');
-var PlayerData = mongoose.model('PlayerData');
-
 
 //utility method for the module
 var sendJSONresponse = function(res, status, content) {
@@ -27,7 +25,7 @@ module.exports.achievementsDataReadAll = function(req, res) {
 };
 
 /* GET AchievementData by Achieved */
-module.exports.achievementDataReadOne = function(req, res) {
+module.exports.achievementsDataReadOne = function(req, res) {
     console.log('Finding Achievement Data Record', req.params);
     if (req.params && req.params.achieved) {
         AchievementData
@@ -59,7 +57,7 @@ module.exports.achievementDataReadOne = function(req, res) {
 };
 
 /* GET all StatsData records */
-module.exports.statsDataReadAllDataReadAll = function(req, res) {
+module.exports.statsDataReadAll = function(req, res) {
     console.log('Finding all Stats Data Records', req);
 
     StatsData
