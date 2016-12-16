@@ -16,8 +16,8 @@
                     //f53f715588d39379ae80bc9bc045c885
                     var steamapikey = keys.STEAM_API_KEY;
                     return $http.jsonp('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/' + steamapikey + '/' +
-                        steamid + "?callback=JSON_CALLBACK", {
-                            jsonCallbackParam: 'callback'
+                        steamid + '', {
+                    playerSummary: playerSummary
                         });
                 })
                 .error(function(e) {
@@ -25,8 +25,9 @@
                 });
         };
         
+        //Path to get player summary from the Steam Web API
         var getSummary2 =  function(steamid){
-            return $http.jsonp('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/FAA7EB283835586C8A0F9E55C7D7346D/' +
+            return $http.jsonp('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/FAA7EB283835586C8A0F9E55C7D7346D/**' +
                 steamid + '', {
                     playerSummary: playerSummary
                 });        
