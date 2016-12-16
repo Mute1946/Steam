@@ -4,9 +4,9 @@
     .module('steamApp')
     .controller('gameCtrl', gameCtrl);
 
-  gameCtrl.$inject = ['$scope', 'GameData', 'SteamData', 'SelectedData'];
+  gameCtrl.$inject = ['$scope', 'GameData', 'SteamidData', 'SelectedData'];
 
-  function gameCtrl($scope, GameData, SteamData, SelectedData) {
+  function gameCtrl($scope, GameData, SteamidData, SelectedData) {
     // Nasty IE9 redirect hack (not recommended)
     /*
     if (window.location.pathname !== '/') {
@@ -37,10 +37,10 @@
     }    
 
     vm.getSteamidData = function() {
-      SteamData.getSteamid()
+      SteamidData.getSteamids()
         .success(function(data) {
-          vm.steamid = data;
-          console.log(vm.steamid);
+          vm.steamidData = data;
+          console.log(vm.steamidData);
         })
         .error(function(e) {
           console.log(e);

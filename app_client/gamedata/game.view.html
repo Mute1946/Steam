@@ -14,8 +14,8 @@
                                 <select id="selectSteamId" 
                                         class="form-control" 
                                         ng-model="vm.selectedSteamID" 
-                                        ng-options="apt.steamId for apt in vm.steamids"></select>
-                                <p class="bg-info" ng-bind="vm.selectedSteamID.steamid"></p>
+                                        ng-options="apt.id for apt in vm.steamids"></select>
+                                <p class="bg-info" ng-bind="vm.selectedSteamID.id"></p>
                             </div>
                             <div class="form-group">
                                 <label for="selectAchievement">Game Achievement</label>
