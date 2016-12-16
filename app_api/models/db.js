@@ -47,5 +47,4 @@ process.on('SIGTERM', function() {
 
 // BRING IN YOUR SCHEMAS & MODELS
 require('./gameData');
-//require('./playerData');
 require('./steamData');
