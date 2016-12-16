@@ -27,7 +27,7 @@
         
         //Path to get player summary from the Steam Web API
         var getSummary2 =  function(steamid){
-            return $http.jsonp('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/FAA7EB283835586C8A0F9E55C7D7346D/**' +
+            return $http.jsonp('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/FAA7EB283835586C8A0F9E55C7D7346D/' +
                 steamid + '', {
                     playerSummary: playerSummary
                 });        
@@ -39,6 +39,6 @@
         };
     }
     
-
+//does not connect to the web api.  Does not show up on heroku
 
 })();

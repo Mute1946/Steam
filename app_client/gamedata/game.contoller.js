@@ -12,11 +12,12 @@
     if (window.location.pathname !== '/') {
       window.location.href = '/#' + window.location.pathname;
     }*/
-    console.log(window.location);    
-    
     
     var vm = this;
+    console.log(window.location);    
+    
     vm.content = "Game Data";
+    
     vm.selectedSteamID = "";
     vm.selectedAchievement = "";
     vm.selectedStat = "";
