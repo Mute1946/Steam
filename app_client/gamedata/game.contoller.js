@@ -36,7 +36,7 @@
       vm.selectedStat = SelectedData.selectedStat;
     }    
 
-    vm.getSteamData = function() {
+    vm.getSteamidData = function() {
       SteamData.getSteamid()
         .success(function(data) {
           vm.steamid = data;
