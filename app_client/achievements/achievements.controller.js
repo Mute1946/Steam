@@ -38,7 +38,7 @@
 
         vm.getAchievementDataForAchieved = function() {
             
-            GameData.getAchievementDataForAchieved(vm.selectedAchievement.achieved)
+            GameData.getAchievementDataForAchieved(vm.selectedAchievement.id)
                 .success(function(data) {
                     
                     vm.achievementData = data;
@@ -49,9 +49,9 @@
                 });            
         }
         
-        console.log("IN STATS DATA FOR STEAMID: " + vm.selectedAchievement.steamid);        
+        console.log("IN STATS DATA FOR STEAMID: " + vm.selectedAchievement.id);        
         //call services
-        vm.getStatDataForSteamid();
+        vm.getAchievementDataForSteamId();
     }
 
 })();
