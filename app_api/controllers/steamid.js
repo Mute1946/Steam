@@ -8,7 +8,7 @@ var sendJSONresponse = function(res, status, content)
     res.json(content);
 };
 
-/* GET all SteamIDData records */
+/* GET all Steam ID records */
 module.exports.steamidDataReadOne = function(req, res)
 {
   console.log("Finding SteamID Data Record", req);
