@@ -132,8 +132,9 @@
     );    
 
     //call services
-    vm.getSteamData();
-    vm.getGameData();
+    vm.getSteamidData();
+    vm.getAchivementData();
+    vm.getStatsData();
 
   }
 

@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var StatsSchema = new mongoose.Schema({
-	steamid: String,
+	id: Number,
 	scoutaccumibuildingsdestroyed: Number,
 	scoutaccumidamagedealt: Number,
 	scoutaccumiplaytime: Number,
@@ -16,7 +16,7 @@ var StatsSchema = new mongoose.Schema({
 mongoose.model('StatsData', StatsSchema, 'StatsData');
 
 var AchivementSchema = new mongoose.Schema({
-	steamid: String,
+	id: Number,
 	playgameeverymap: Number,
 	getconsecutivekillsnodeaths: Number,
 	medicrapidcharge: Number,
@@ -30,10 +30,9 @@ var AchivementSchema = new mongoose.Schema({
 mongoose.model('AchievementData', AchivementSchema, 'AchievementData');
 
 var SteamidSchema = new mongoose.Schema({
-	steamid: String,
-	game: String,
+	id: Number,
 	stats: [StatsSchema],
 	achievements: [AchivementSchema]
 });
 
-mongoose.model('GameData', SteamidSchema, 'GameData');
+mongoose.model('SteamidData', SteamidSchema, 'SteamidData');
