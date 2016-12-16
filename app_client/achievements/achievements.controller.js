@@ -47,8 +47,11 @@
                 .error(function(e) {
                     console.log(e);
                 });            
-        };
-
+        }
+        
+        console.log("IN STATS DATA FOR STEAMID: " + vm.selectedAchievement.steamid);        
+        //call services
+        vm.getStatDataForSteamid();
     }
 
 })();

@@ -4,9 +4,9 @@
         .module('steamApp')
         .controller('statsCtrl', statsCtrl);
 
-    statsCtrl.$inject = ['$scope', 'SelectedData', 'GameData'];
+    statsCtrl.$inject = ['$scope', 'GameData', 'SelectedData'];
 
-    function statsCtrl($scope, SelectedData, GameData) {
+    function statsCtrl($scope, GameData, SelectedData) {
         // Nasty IE9 redirect hack (not recommended)
         /*
         if (window.location.pathname !== '/') {
@@ -36,9 +36,9 @@
             vm.selectedStat = SelectedData.selectedStat;
         }
 
-        vm.getStatsDataForValue = function() {
+        vm.getStatsDataForSteamID = function() {
             
-            GameData.getStatsDataForValue(vm.selectedStat.value)
+            GameData.getStatsDataForSteamID(vm.selectedStat.steamid)
                 .success(function(data) {
                     //since find may select many, just return the single object
                     vm.statsData = data;

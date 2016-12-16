@@ -28,7 +28,7 @@
         controllerAs: 'vm'
       })
       .when('/gamedata/', {
-        templateUrl: '/gamedata/gamedata.view.html',
+        templateUrl: '/gamedata/game.view.html',
         controller: 'gameCtrl',
         controllerAs: 'vm'
       })      

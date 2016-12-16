@@ -4,9 +4,9 @@
         .module('steamApp')
         .controller('playerSummaryCtrl', playerSummaryCtrl);
 
-    playerSummaryCtrl.$inject = ['$scope', 'SelectedData', 'PlayerSummary'];
+    playerSummaryCtrl.$inject = ['$scope', 'PlayerSummary', 'SelectedData'];
 
-    function playerSummaryCtrl($scope, SelectedData, PlayerSummary) {
+    function playerSummaryCtrl($scope, PlayerSummary, SelectedData) {
         // Nasty IE9 redirect hack (not recommended)
         /*
         if (window.location.pathname !== '/') {
@@ -52,7 +52,7 @@
         }
         
         //call services
-        vm.getPlayerSummary();
+        vm.getplayerSummary();
 
     }
 
