@@ -36,9 +36,9 @@
             vm.selectedStat = SelectedData.selectedStat;
         }
 
-        vm.getAchievementDataForAchieved = function() {
+        vm.getAchievementDataForSteamId = function() {
             
-            GameData.getAchievementDataForAchieved(vm.selectedAchievement.id)
+            GameData.getAchievementDataForSteamId(vm.selectedAchievement.id)
                 .success(function(data) {
                     
                     vm.achievementData = data;

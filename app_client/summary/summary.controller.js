@@ -38,10 +38,10 @@
 
         vm.getPlayerSummary = function() {
             
-            var steamid = vm.selectedSteamID.steamid;
-            console.log(steamid);
+            var id = vm.selectedSteamID.id;
+            console.log(id);
             
-            PlayerSummary.getSummary2(steamid)
+            PlayerSummary.getSummary2(id)
                 .success(function(data) {
                     vm.playerSummary = data;
                     console.log(vm.PlayerSummary);
