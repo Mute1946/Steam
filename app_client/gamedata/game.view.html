@@ -22,16 +22,16 @@
                                 <select id="selectAchievement" 
                                         class="form-control" 
                                         ng-model="vm.selectedAchievement" 
-                                        ng-options="apt.achievementName for apt in vm.achievements"></select>
-                                <p class="bg-info" ng-bind="vm.selectedAchievement.achievementName"></p>
+                                        ng-options="achievement.id for achievement in vm.achievementData"></select>
+                                <p class="bg-info" ng-bind="vm.selectedAchievement.id"></p>
                             </div>
                             <div class="form-group">
                                 <label for="selectStat">Game Stat</label>
                                 <select id="selectStat" 
                                         class="form-control" 
                                         ng-model="vm.selectedStat" 
-                                        ng-options="apt.statsName for apt in vm.stats"></select>
-                                <p class="bg-info" ng-bind="vm.selectedStat.statsName"></p>
+                                        ng-options="stat.id for stat in vm.statsData"></select>
+                                <p class="bg-info" ng-bind="vm.selectedStat.id"></p>
                             </div>                             
                         </form>
                     
