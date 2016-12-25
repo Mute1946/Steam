@@ -8,7 +8,7 @@
   
   function gameData ($http) {
     var getSteamidData = function () {
-      return $http.get('/api/steamidData');
+      return $http.get('/api/gameData');
     };
 
     var getAchievementDataForSteamId = function (id) {

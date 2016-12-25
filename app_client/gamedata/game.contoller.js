@@ -48,7 +48,7 @@
         });
     };
 
-    vm.getAchivementData = function() {
+    vm.getAchievementData = function() {
       GameData.getAchievementData()
         .success(function(data) {
           vm.achievementData = data;
@@ -77,7 +77,7 @@
       else {
         vm.class = "toggled";
       }
-      console.log(vm.class + " is good");
+      console.log(vm.class + "is good");
     };
     
     vm.clearSelectedData = function(){
@@ -134,7 +134,7 @@
 
     //call services
     vm.getSteamidData();
-    vm.getAchivementData();
+    vm.getAchievementData();
     vm.getStatsData();
 
   }
